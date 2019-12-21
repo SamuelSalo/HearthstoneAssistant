@@ -10,7 +10,7 @@
     <Grid>
         <Label x:Name="TitleLabel" Content="Hearthstone Assistant" HorizontalAlignment="Center" Margin="0,20" VerticalAlignment="Top" FontFamily="{StaticResource Belwe Bd BT}" Foreground="Black" FontSize="30" Background="#00000000"/>
         <Label x:Name="SearchForACardLabel" Content="Search for card info" HorizontalAlignment="Center" Margin="0,70" VerticalAlignment="Top" FontFamily="{StaticResource URWStanzaW01-Normal}" FontSize="16"/>
-        <TextBox x:Name="SearchBox" HorizontalAlignment="Center" Height="25" Margin="0,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" BorderBrush="Black" FontFamily="{StaticResource URWStanzaW01-Normal}" FontSize="12" ToolTip="" Text="Enter card name or ID..." AutomationProperties.HelpText="Enter card name or ID..."/>
+        <TextBox x:Name="SearchBox" HorizontalAlignment="Center" Height="25" Margin="0,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" BorderBrush="Black" FontFamily="{StaticResource Belwe Bd BT}" FontSize="12" ToolTip="" Text="Enter card name or ID..." AutomationProperties.HelpText="Enter card name or ID..."/>
         <Button x:Name="SearchButton" Content="Search!" HorizontalAlignment="Center" FontFamily="{StaticResource URWStanzaW01-Normal}" Margin="0,150,0,0" VerticalAlignment="Top" Width="76" Height="35" Click="Search"/>
     </Grid>
     <Window.Background>

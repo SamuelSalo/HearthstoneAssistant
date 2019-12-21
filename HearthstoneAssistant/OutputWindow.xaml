@@ -1,0 +1,20 @@
+﻿<Window x:Class="HearthstoneAssistant.OutputWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HearthstoneAssistant"
+        mc:Ignorable="d"
+        Title="OutputWindow" Height="500" Width="400">
+    <Grid>
+        <Label x:Name="IDLabel" Content="ID:123" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Width="60" FontFamily="{StaticResource URWStanzaW01-Normal}"/>
+        <Label x:Name="nameLabel" Content="Card Name" HorizontalAlignment="Center" Margin="0,20" VerticalAlignment="Top" FontFamily="{StaticResource Belwe Bd BT}" FontSize="36"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="229" VerticalAlignment="Top" Width="229" Margin="84,158,0,0"/>
+
+    </Grid>
+    <Window.Background>
+        <ImageBrush ImageSource="file:///C:/Users/theAcedia/source/repos/HearthstoneAssistant/HearthstoneAssistant/bg.jpg" 
+            Stretch="UniformToFill"
+            AlignmentY="Top"/>
+    </Window.Background>
+</Window>

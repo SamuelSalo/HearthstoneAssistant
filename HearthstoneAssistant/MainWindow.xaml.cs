@@ -14,33 +14,21 @@ namespace HearthstoneAssistant
         protected string json = string.Empty;
         protected const string apiurl = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/";
         protected const string apikey = "831129d93cmsh608e397103ead70p1dd02bjsnf164767338db";
-
+        protected const string apihost = "omgvamp-hearthstone-v1.p.rapidapi.com";
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        protected private string Join (string[] strings)
-        {
-            string joined = string.Empty;
-
-            foreach (string str in strings)
-            {
-                joined += str;
-            }
-
-            return joined;
         }
 
         private void Search(object sender, RoutedEventArgs e)
         {
             string cardname = System.Uri.EscapeUriString(SearchBox.Text);
             
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Join(new string[] {apiurl, cardname} ));
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(apiurl + cardname);
 
             request.Method = WebRequestMethods.Http.Get;
 
-            request.Headers["x-rapidapi-host"] = "omgvamp-hearthstone-v1.p.rapidapi.com";
+            request.Headers["x-rapidapi-host"] = apihost;
             request.Headers["x-rapidapi-key"] = apikey;
 
             using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
@@ -49,7 +37,12 @@ namespace HearthstoneAssistant
             {
                 json = reader.ReadToEnd();
             }
-            MessageBox.Show(json);
+
+            File.WriteAllText("output.json", json);
+            CardInfo cardInfo = JsonConvert.DeserializeObject<CardInfo>(json.Substring(1, json.Length - 2));
+            OutputWindow outputWindow = new OutputWindow(cardInfo);
+            outputWindow.Show();
+            this.Close();
         }
     }
 }

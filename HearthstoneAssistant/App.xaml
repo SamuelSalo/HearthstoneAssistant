@@ -1,0 +1,11 @@
+﻿<Application x:Class="HearthstoneAssistant.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:HearthstoneAssistant"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <FontFamily x:Key="Belwe Bd BT">pack://application:HearthstoneAssistant/Fonts/#Belwe Bd BT</FontFamily>
+        <FontFamily x:Key="LHF Uncial Caps">pack://application:HearthstoneAssistant/Fonts/#LHF Uncial Caps</FontFamily>
+        <FontFamily x:Key="URWStanzaW01-Normal">pack://application:HearthstoneAssistant/Fonts/#URWStanzaW01-Normal</FontFamily>
+    </Application.Resources>
+</Application>

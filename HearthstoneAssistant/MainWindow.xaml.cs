@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using System.Net;
 using System.IO;
-using System.Web;
 using Newtonsoft.Json;
 
 namespace HearthstoneAssistant
@@ -39,8 +38,8 @@ namespace HearthstoneAssistant
             }
 
             File.WriteAllText("output.json", json);
-            CardInfo cardInfo = JsonConvert.DeserializeObject<CardInfo>(json.Substring(1, json.Length - 2));
-            OutputWindow outputWindow = new OutputWindow(cardInfo);
+            CardInfo[] cards = JsonConvert.DeserializeObject<CardInfo[]>(json);
+            OutputWindow outputWindow = new OutputWindow(cards[0]);
             outputWindow.Show();
             this.Close();
         }

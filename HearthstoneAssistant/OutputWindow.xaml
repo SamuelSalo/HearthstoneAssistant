@@ -5,11 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HearthstoneAssistant"
         mc:Ignorable="d"
-        Title="OutputWindow" Height="500" Width="400">
+        Title="OutputWindow" Height="500" Width="400" ResizeMode="NoResize">
     <Grid>
-        <Label x:Name="IDLabel" Content="ID:123" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Width="60" FontFamily="{StaticResource URWStanzaW01-Normal}"/>
+        <Label x:Name="IDLabel" Content="ID:123" HorizontalAlignment="Right" Margin="0,20,10,0" VerticalAlignment="Top" Width="75" FontFamily="{StaticResource URWStanzaW01-Normal}"/>
         <Label x:Name="nameLabel" Content="Card Name" HorizontalAlignment="Center" Margin="0,20" VerticalAlignment="Top" FontFamily="{StaticResource Belwe Bd BT}" FontSize="36"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="229" VerticalAlignment="Top" Width="229" Margin="84,158,0,0"/>
+        <TextBlock x:Name="cardTextBlock" HorizontalAlignment="Center" Margin="0,100" TextWrapping="Wrap" Text="Card Text" VerticalAlignment="Top" Height="80" Width="200" TextAlignment="Center" FontFamily="{StaticResource Belwe Bd BT}"/>
+        <Label x:Name="costLabel" Content="Cost: 0" HorizontalAlignment="Center" Margin="0,200" VerticalAlignment="Top" FontFamily="{StaticResource LHF Uncial Caps}" FontSize="16"/>
+        <Label x:Name="atkLabel" Content="Atk: 0" HorizontalAlignment="Center" Margin="162,231,162,0" VerticalAlignment="Top" FontFamily="{StaticResource LHF Uncial Caps}" FontSize="16"/>
+        <Label x:Name="hpLabel" Content="Hp: 0" HorizontalAlignment="Center" Margin="162,262,162,0" VerticalAlignment="Top" FontFamily="{StaticResource LHF Uncial Caps}" FontSize="16"/>
+        <Label x:Name="raceLabel" Content="Race: " HorizontalAlignment="Center" Margin="10,293,10,0" VerticalAlignment="Top" FontFamily="{StaticResource LHF Uncial Caps}" FontSize="16" Width="372" HorizontalContentAlignment="Center"/>
+        <Label x:Name="eliteLabel" Content="Elite ?: " HorizontalAlignment="Center" Margin="131,324,127,0" VerticalAlignment="Top" FontFamily="{StaticResource LHF Uncial Caps}" FontSize="16" Width="136" HorizontalContentAlignment="Center"/>
+        <Label x:Name="rarityLabel" Content="Rarity: " HorizontalAlignment="Center" Margin="10,355,11,0" VerticalAlignment="Top" FontFamily="{StaticResource LHF Uncial Caps}" FontSize="16" Width="373" HorizontalContentAlignment="Center"/>
+        <Label x:Name="factionLabel" Content="Faction: " HorizontalAlignment="Center" Margin="10,386,10,0" VerticalAlignment="Top" FontFamily="{StaticResource LHF Uncial Caps}" FontSize="16" Width="374" HorizontalContentAlignment="Center"/>
+        <Label x:Name="setLabel" Content="Card Set: " HorizontalAlignment="Center" Margin="11,412,9,0" VerticalAlignment="Top" FontFamily="{StaticResource LHF Uncial Caps}" FontSize="16" Width="374" HorizontalContentAlignment="Center"/>
+        <Button x:Name="imgButton" Content="Show Card" HorizontalAlignment="Left" Margin="10,403,0,0" VerticalAlignment="Top" Width="83" Height="35" Background="#00000000" BorderBrush="Black" Click="ShowCard"/>
+        <CheckBox x:Name="goldCheckBox" Content="Golden?" HorizontalAlignment="Left" Margin="11,447,0,0" VerticalAlignment="Top" Width="82" Height="19"/>
 
     </Grid>
     <Window.Background>

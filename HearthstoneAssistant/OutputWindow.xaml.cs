@@ -1,12 +1,5 @@
 ﻿using System;
 using System.Windows;
-using System.IO;
-using System.Windows.Controls;
-using System.Web;
-using System.Windows.Media.Imaging;
-using System.Drawing;
-using System.Net;
-using System.Windows.Interop;
 
 namespace HearthstoneAssistant
 {
@@ -22,8 +15,35 @@ namespace HearthstoneAssistant
             InitializeComponent();
             cardInfo = cardInput;
             Title = cardInfo.name;
-            IDLabel.Content = "ID: "+ cardInfo.cardId;
+
+            IDLabel.Content = "ID: " + cardInfo.cardId;
             nameLabel.Content = cardInfo.name;
+
+            if (!String.IsNullOrEmpty(cardInfo.text))
+            {
+                string tmpText;
+                tmpText = cardInfo.text.Replace("<b>", "");
+                tmpText = tmpText.Replace("</b>", "");
+                tmpText = tmpText.Replace("\\n", Environment.NewLine);
+                cardTextBlock.Text = tmpText;
+            }
+            else
+                cardTextBlock.Text = "";
+
+            costLabel.Content = $"Cost: {cardInfo.cost}";
+            atkLabel.Content = $"ATK: {cardInfo.attack}";
+            hpLabel.Content = $"HP: {cardInfo.health}";
+            raceLabel.Content = $"Race: {cardInfo.race}";
+            eliteLabel.Content = cardInfo.elite ? "Elite ?: Yes" : "Elite ?: No";
+            rarityLabel.Content = $"Rarity: {cardInfo.rarity}";
+            factionLabel.Content = $"Faction: {cardInfo.faction}";
+            setLabel.Content = $"Card Set: {cardInfo.cardSet}";
+        }
+
+        private void ShowCard(object sender, RoutedEventArgs e)
+        {
+            CardImage cardImage = new CardImage((bool)goldCheckBox.IsChecked ? cardInfo.imgGold : cardInfo.img);
+            cardImage.Show();
         }
     }
 }
